@@ -8,15 +8,14 @@ use App\Models\Lokasi;
 use App\Models\Ulasan;
 use Illuminate\Http\Request;
 
-class PenginapanController extends Controller
+class KesehatanController extends Controller
 {
     public function index()
     {
-        $kategori = Kategori::where('nama', 'Penginapan')->first();
+        $kategori = Kategori::where('nama', 'Kesehatan')->first();
         $lokasi = Lokasi::where('id_kategori', $kategori->id_kategori)->get();
-
         $ulasan = Ulasan::whereIn('id_lokasi', $lokasi->pluck('id_lokasi')->toArray())->get();
-        return view('frontend.penginapan.index', compact('lokasi', 'ulasan'));
+        return view('frontend.kesehatan.index', compact('lokasi', 'ulasan'));
     }
 
     public function show($slug)
@@ -32,9 +31,9 @@ class PenginapanController extends Controller
         if(auth()->check()) {
             $userHasFeedback = Ulasan::where('id_user', auth()->user()->id_user)->where('id_lokasi', $lokasi->id_lokasi)->count();
             $data['userHasFeedback'] = $userHasFeedback;
-            return view('frontend.penginapan.show', $data);
+            return view('frontend.kesehatan.show', $data);
         } else {
-            return view('frontend.penginapan.show', $data);
+            return view('frontend.kesehatan.show', $data);
         }
     }
 }

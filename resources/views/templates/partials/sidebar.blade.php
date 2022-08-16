@@ -2,11 +2,11 @@
     <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
     <div class="app-sidebar ps ps--active-y sidemenu-scroll">
         <div class="side-header"> <a class="header-brand1" href="{{route('dashboard.index')}}"> <img
-                    src="{{asset('assets/images/logo.jpeg')}}" class="header-brand-img desktop-logo"
-                    alt="logo"> <img src="{{asset('assets/images/logo.jpeg')}}"
+                    src="{{asset('assets/images/logo-2.png')}}" class="header-brand-img desktop-logo"
+                    alt="logo"> <img src="{{asset('assets/images/logo-2.png')}}"
                     class="header-brand-img toggle-logo" alt="logo"> <img
-                    src="{{asset('assets/images/logo.jpeg')}}" class="header-brand-img light-logo"
-                    alt="logo"> <img src="{{asset('assets/images/logo.jpeg')}}"
+                    src="{{asset('assets/images/logo-2.png')}}" class="header-brand-img light-logo"
+                    alt="logo"> <img src="{{asset('assets/images/logo-2.png')}}"
                     class="header-brand-img light-logo1" style="width: 100px" alt="logo"> </a> <!-- LOGO -->
         </div>
         <div class="main-sidemenu">
@@ -20,19 +20,19 @@
                     <h3>Main</h3>
                 </li>
                 <li class="slide"> 
-                    <a class="side-menu__item has-link {{Request::is('dashboard') ? 'active' : (Request::is('/') ? 'active' : '') }}" data-bs-toggle="slide"
+                    <a class="side-menu__item has-link {{Request::is('admin/dashboard') ? 'active' : (Request::is('/') ? 'active' : '') }}" data-bs-toggle="slide"
                         href="{{route('dashboard.index')}}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Dashboard</span>
                     </a>
-                    <a class="side-menu__item has-link {{Request::is('kebudayaan') ? 'active' : '' }}" data-bs-toggle="slide"
+                    <a class="side-menu__item has-link {{Request::is('admin/kebudayaan') ? 'active' : '' }}" data-bs-toggle="slide"
                         href="{{route('kebudayaan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Kebudayaan</span>
                     </a>
-                    <a class="side-menu__item has-link {{Request::is('penginapan') ? 'active' : '' }}" data-bs-toggle="slide"
+                    <a class="side-menu__item has-link {{Request::is('admin/penginapan') ? 'active' : '' }}" data-bs-toggle="slide"
                         href="{{route('penginapan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Penginapan</span>
                     </a>
-                    <a class="side-menu__item has-link {{Request::is('kesehatan') ? 'active' : '' }}" data-bs-toggle="slide"
+                    <a class="side-menu__item has-link {{Request::is('admin/kesehatan') ? 'active' : '' }}" data-bs-toggle="slide"
                         href="{{route('kesehatan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Kesehatan</span>
                     </a>

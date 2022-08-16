@@ -14,9 +14,9 @@
     <div class="container py-5">
         <div class="row py-5">
             <div class="col-lg-5 py-5">
-                <h1>Penginapan Terdekat dari Pura Goa Giri Putri</h1>
+                <h1>Tempat Kesehatan Terdekat dari Pura Goa Giri Putri</h1>
                 <p class="my-4 text-muted">
-                    Fasilitas penginapan yang terdekat yang tersedia pada Pura Goa Giri Putri.
+                    Fasilitas kesehatan yang terdekat yang tersedia pada Pura Goa Giri Putri.
                 </p>
                 <ul class="list-inline mb-0">
                     {{-- <li class="list-inline-item mb-2 mb-lg-0"><a class="btn btn-primary btn-lg px-4" href="#!"> <i
@@ -63,19 +63,19 @@
     style="background: url(https://d19m59y37dris4.cloudfront.net/app/2-0/img/service-bg.d0e67e81.svg) no-repeat; background-size: cover">
     <section class="about py-0">
         <div class="container">
-            <p class="h6 text-uppercase text-primary">Fasilitas Penginapan</p>
+            <p class="h6 text-uppercase text-primary">Fasilitas Kesehatan</p>
             {{-- <h2 class="mb-5">Tentang Pura Goa Giri Putri</h2> --}}
             <div class="row pb-5 gy-4">
-                @foreach ($lokasi as $penginapan)
-                <div class="col-lg-4 col-md-6 link" style="cursor: pointer" data-source="{{route('frontend.penginapan.show', str_replace(' ', '-', $penginapan->nama))}}">
+                @foreach ($lokasi as $kesehatan)
+                <div class="col-lg-4 col-md-6 link" style="cursor: pointer" data-source="{{route('frontend.kesehatan.show', str_replace(' ', '-', $kesehatan->nama))}}">
                     <!-- Services Item-->
                     <div class="card border-0 shadow rounded-lg py-4 text-start">
                         <div class="card-body p-5">
                             <div class="text-center">
-                                <img class="img-fluid" src="{{asset($penginapan->foto)}}" alt="">
+                                <img class="img-fluid" src="{{asset($kesehatan->foto)}}" alt="">
                             </div>
-                            <h3 class="h4 my-4">{{$penginapan->nama}}</h3>
-                            <p class="text-sm text-muted mb-0">{{$penginapan->alamat}}</p>
+                            <h3 class="h4 my-4">{{$kesehatan->nama}}</h3>
+                            <p class="text-sm text-muted mb-0">{{$kesehatan->alamat}}</p>
                         </div>
                     </div>
                 </div>
@@ -84,6 +84,7 @@
         </div>
     </section>
 
+    {{-- for detail --}}
     {{-- for detail --}}
     @if (count($ulasan) > 0)
     <section class="p-0" id="testimonials"
@@ -122,7 +123,6 @@
     @endif
 
 </section>
-
 @endsection
 
 @push('scripts')

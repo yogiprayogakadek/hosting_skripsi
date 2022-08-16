@@ -2,9 +2,9 @@
     <div class="container-fluid main-container">
         <div class="d-flex"> <a aria-label="Hide Sidebar" class="app-sidebar__toggle"
                 data-bs-toggle="sidebar" href="javascript:void(0)"></a> <!-- sidebar-toggle--> <a
-                class="logo-horizontal " href="index.html"> <img src="https://spruko.com/demo/sash/sash/assets/images/brand/logo.png"
-                    class="header-brand-img desktop-logo" alt="logo"> <img
-                    src="https://spruko.com/demo/sash/sash/assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
+                class="logo-horizontal " href="{{route('dashboard.index')}}"> <img src="{{asset('assets/images/logo-2.png')}}"
+                    class="header-brand-img desktop-logo" alt="logo" height="50px"> <img
+                    src="{{asset('assets/images/logo-2.png')}}" height="50px" class="header-brand-img light-logo1"
                     alt="logo"> </a> <!-- LOGO -->
             <div class="d-flex order-lg-2 ms-auto header-right-icons">
                 <button
@@ -30,8 +30,8 @@
                             <div class="dropdown d-flex profile-1"> 
                                 <a href="javascript:void(0)"
                                     data-bs-toggle="dropdown" class="nav-link leading-none d-flex"> 
-                                    {{-- <img src="{{fotoAkun()}}" alt="profile-user"
-                                        class="avatar  profile-user brround cover-image">  --}}
+                                    <img src="{{fotoAkun()}}" alt="profile-user"
+                                        class="avatar  profile-user brround cover-image"> 
                                     </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <div class="drop-heading">
@@ -41,9 +41,9 @@
                                         </div>
                                     </div>
                                     <div class="dropdown-divider m-0"></div> 
-                                    <a class="dropdown-item"
+                                    {{-- <a class="dropdown-item"
                                         href="profile.html"> <i class="dropdown-icon fe fe-user"></i>
-                                        Profile </a> 
+                                        Profile </a>  --}}
                                         {{-- <a class="dropdown-item" href="email-inbox.html">
                                         <i class="dropdown-icon fe fe-mail"></i> Inbox <span
                                             class="badge bg-danger rounded-pill float-end">5</span> </a>

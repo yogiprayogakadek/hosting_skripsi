@@ -9,7 +9,7 @@
         <h1>Pura Goa Giri Putri </h1>
         <p class="my-4 text-muted">Desa Suana, Kecamatan Nusa Penida, Kabupaten Klungkung, Bali.</p>
         <ul class="list-inline mb-0">
-          <li class="list-inline-item mb-2 mb-lg-0"><a class="btn btn-primary btn-lg px-4" href="#!"> <i class="fa fa-map me-3"></i>Maps</a></li>
+          <li class="list-inline-item mb-2 mb-lg-0"><a class="btn btn-primary btn-lg px-4" href="https://www.google.com/maps?q=pura+goa+giri+putri&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiwgv-A9cr5AhVXE7cAHaPPBeoQ_AUoAnoECAIQBA"> <i class="fa fa-map me-3"></i>Maps</a></li>
           {{-- <li class="list-inline-item"><a class="btn btn-primary btn-lg px-4" href="#!"> <i class="fab fa-app-store me-3"></i>App Store</a></li> --}}
         </ul>
       </div>
@@ -161,7 +161,7 @@
         <div class="col-lg-4">
           {{-- <h2>Tata Cara Persembahyangan</h2> --}}
           <p class="text-muted">Tata cara dalam melakukan persembahyangan pada pura goa giri putri dapat dilihat pada video berikut</p>
-          <button class="btn btn-primary js-modal-btn" data-video-id="B6uuIHpFkuo"><i class="fas fa-play-circle me-2"></i>Play video</button>
+          <button class="btn btn-primary js-modal-btn" data-video-id="lUr3q_ioquo"><i class="fas fa-play-circle me-2"></i>Play video</button>
         </div>
       </div>
       <div class="row align-items-center gy-5 py-5">
@@ -179,7 +179,7 @@
             </li>
             {{-- <li class="text-muted mb-2">Waterfall, Video and Report History</li> --}}
           </ul>
-          <button class="btn btn-primary js-modal-btn" data-video-id="B6uuIHpFkuo"><i class="fas fa-play-circle me-2"></i>Play video</button>
+          <button class="btn btn-primary js-modal-btn" data-video-id="aBgnu4ChFzg"><i class="fas fa-play-circle me-2"></i>Play video</button>
         </div>
         <div class="col-lg-6">
           <div class="row gy-4">

@@ -13,6 +13,16 @@ Route::namespace('Frontend')->name('frontend.')->group(function () {
         Route::get('/', 'PenginapanController@index')->name('index');
         Route::get('/{slug}', 'PenginapanController@show')->name('show');
     });
+
+    Route::prefix('/kebudayaan')->name('kebudayaan.')->group(function() {
+        Route::get('/', 'KebudayaanController@index')->name('index');
+        Route::get('/{slug}', 'KebudayaanController@show')->name('show');
+    });
+
+    Route::prefix('/kesehatan')->name('kesehatan.')->group(function() {
+        Route::get('/', 'KesehatanController@index')->name('index');
+        Route::get('/{slug}', 'KesehatanController@show')->name('show');
+    });
     
     Route::post('/ulasan', 'MainController@ulasan')->name('ulasan');
 });

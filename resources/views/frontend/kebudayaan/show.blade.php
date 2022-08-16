@@ -17,7 +17,7 @@
     <div class="container py-5">
         <div class="row py-5">
             <div class="col-lg-5 py-5">
-                <h1>Penginapan {{$lokasi->nama}}</h1>
+                <h1>Kebudayaan {{$lokasi->nama}}</h1>
                 <p class="my-4 text-muted">
                     {{$lokasi->alamat}}
                 </p>
@@ -52,42 +52,40 @@
         <p class="h6 text-uppercase text-primary">Galeri {{$lokasi->nama}}</p>
         {{-- <h2 class="mb-5">What Our Users Says?</h2> --}}
         <div class="row">
-            <div class="row">
-                {{-- Gall --}}
-                <div class="col-lg-6 mx-auto">
-                    @if ($lokasi->galeri_foto != null)
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                @foreach (json_decode($lokasi->galeri_foto, true) as $index =>  $value)
-                                <li data-target="#carouselExampleIndicators" data-slide-to="{{$index}}" class="{{$index == 0 ? 'active' : ''}}"></li>
-                                @endforeach
-                            </ol>
-                            <div class="carousel-inner">
-                                @foreach (json_decode($lokasi->galeri_foto, true) as $key => $item)
-                                <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
-                                    <img class="d-block w-100" src="{{asset($item['foto'])}}">
-                                    {{-- <div class="carousel-caption d-none d-md-block">
-                                        <h5>{{$item->nama}}</h5>
-                                        <p>{{$item->alamat}}</p>
-                                    </div> --}}
-                                </div>
-                                @endforeach
+            {{-- Gall --}}
+            <div class="col-lg-6 mx-auto">
+                @if ($lokasi->galeri_foto != null)
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            @foreach (json_decode($lokasi->galeri_foto, true) as $index =>  $value)
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{$index}}" class="{{$index == 0 ? 'active' : ''}}"></li>
+                            @endforeach
+                        </ol>
+                        <div class="carousel-inner">
+                            @foreach (json_decode($lokasi->galeri_foto, true) as $key => $item)
+                            <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
+                                <img class="d-block w-100" src="{{asset($item['foto'])}}">
+                                {{-- <div class="carousel-caption d-none d-md-block">
+                                    <h5>{{$item->nama}}</h5>
+                                    <p>{{$item->alamat}}</p>
+                                </div> --}}
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                            @endforeach
                         </div>
-                    @else
-                        <div class="alert alert-warning">
-                            <p>Tidak ada foto</p>
-                        </div>
-                    @endif
-                </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                @else
+                    <div class="alert alert-warning">
+                        <p>Tidak ada foto</p>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
