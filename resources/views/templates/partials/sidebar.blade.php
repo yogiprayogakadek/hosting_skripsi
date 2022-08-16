@@ -1,7 +1,7 @@
 <div class="sticky" style="margin-bottom: -74px;">
     <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
     <div class="app-sidebar ps ps--active-y sidemenu-scroll">
-        <div class="side-header"> <a class="header-brand1" href="{{route('main')}}"> <img
+        <div class="side-header"> <a class="header-brand1" href="{{route('dashboard.index')}}"> <img
                     src="{{asset('assets/images/logo.jpeg')}}" class="header-brand-img desktop-logo"
                     alt="logo"> <img src="{{asset('assets/images/logo.jpeg')}}"
                     class="header-brand-img toggle-logo" alt="logo"> <img
@@ -24,57 +24,18 @@
                         href="{{route('dashboard.index')}}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Dashboard</span>
                     </a>
-                    {{-- <a class="side-menu__item has-link {{Request::is('pegawai') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('pegawai.index')}}"><i class="side-menu__icon fe fe-users"></i><span
-                            class="side-menu__label">Data Pegawai</span>
+                    <a class="side-menu__item has-link {{Request::is('kebudayaan') ? 'active' : '' }}" data-bs-toggle="slide"
+                        href="{{route('kebudayaan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
+                            class="side-menu__label">Kebudayaan</span>
                     </a>
-                    <a class="side-menu__item has-link {{Request::is('barang') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('barang.index')}}"><i class="side-menu__icon fe fe-aperture"></i><span
-                            class="side-menu__label">Data Barang</span>
+                    <a class="side-menu__item has-link {{Request::is('penginapan') ? 'active' : '' }}" data-bs-toggle="slide"
+                        href="{{route('penginapan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
+                            class="side-menu__label">Penginapan</span>
                     </a>
-                    <a class="side-menu__item has-link {{Request::is('pengadaan') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('pengadaan.index')}}"><i class="side-menu__icon fe fe-book"></i><span
-                            class="side-menu__label">Pengadaan Barang</span>
-                            @can('validator')
-                            <span class="badge bg-pink side-badge">{{pengadaanNeedApproval()}}</span>
-                            @endcan
-                            @can('staff_administrasi')
-                            <span class="badge bg-pink side-badge">{{pengadaanNeedApproval()}}</span>
-                            @endcan
-                            @can('bendahara')
-                            <span class="badge bg-pink side-badge">{{pengadaanNeedApprovalBendahara()}}</span>
-                            @endcan
+                    <a class="side-menu__item has-link {{Request::is('kesehatan') ? 'active' : '' }}" data-bs-toggle="slide"
+                        href="{{route('kesehatan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
+                            class="side-menu__label">Kesehatan</span>
                     </a>
-                    <a class="side-menu__item has-link {{Request::is('perbaikan') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('perbaikan.index')}}"><i class="side-menu__icon fe fe-slack"></i><span
-                            class="side-menu__label">Perbaikan Barang</span>
-                            @can('validator')
-                            <span class="badge bg-pink side-badge">{{maintenanceNeedApproval('Perbaikan')}}</span>
-                            @endcan
-                            @can('bendahara')
-                            <span class="badge bg-pink side-badge">{{maintenaceNeedApproveBendahara('Perbaikan')}}</span>
-                            @endcan
-                    </a>
-                    <a class="side-menu__item has-link {{Request::is('kerusakan') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('kerusakan.index')}}"><i class="side-menu__icon fe fe-settings"></i><span
-                            class="side-menu__label">Kerusakan Barang</span>
-                            @can('validator')
-                            <span class="badge bg-pink side-badge">{{maintenanceNeedApproval('Kerusakan')}}</span>
-                            @endcan
-                            @can('bendahara')
-                            <span class="badge bg-pink side-badge">{{maintenaceNeedApproveBendahara('Kerusakan')}}</span>
-                            @endcan
-                    </a>
-                    <a class="side-menu__item has-link {{Request::is('perawatan') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('perawatan.index')}}"><i class="side-menu__icon fe fe-settings"></i><span
-                            class="side-menu__label">Perawatan Barang</span>
-                            @can('validator')
-                            <span class="badge bg-pink side-badge">{{maintenanceNeedApproval('Perawatan')}}</span>
-                            @endcan
-                            @can('bendahara')
-                            <span class="badge bg-pink side-badge">{{maintenaceNeedApproveBendahara('Perawatan')}}</span>
-                            @endcan
-                    </a> --}}
                 </li>
             </ul>
             <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg"

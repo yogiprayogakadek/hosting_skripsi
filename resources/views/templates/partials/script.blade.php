@@ -19,5 +19,6 @@
     <script src="https://spruko.com/demo/sash/sash/assets/plugins/datatable/dataTables.responsive.min.js"></script>
     <script src="https://spruko.com/demo/sash/sash/assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.1/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     <script src="{{asset('functions/print/main.js')}}"></script>
 @stack('script')
