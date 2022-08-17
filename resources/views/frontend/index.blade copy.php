@@ -30,19 +30,55 @@
       <p class="h6 text-uppercase text-primary">Tentang Pura Goa Giri Putri</p>
       {{-- <h2 class="mb-5">Tentang Pura Goa Giri Putri</h2> --}}
       <div class="row pb-5 gy-4">
-
-        @foreach (json_decode($lokasi->deskripsi, true)['tentang'] as $key => $tentang)
         <div class="col-lg-4 col-md-6">
           <!-- Services Item-->
-          <div class="card border-0 shadow rounded-lg py-2 text-start">
+          <div class="card border-0 shadow rounded-lg py-4 text-start">
             <div class="card-body p-5">
-              <h3 class="h4 my-4">{{$tentang['tentang']}}</h3>
-              <p class="text-sm text-muted mb-0">{{$tentang['deskripsi']}}</p>
+              <svg class="svg-icon svg-icon-light" style="width:60px;height:60px;color:#ff904e">
+                <use xlink:href="#document-saved-1"> </use>
+              </svg>
+              <h3 class="h4 my-4">Online Marketing</h3>
+              <p class="text-sm text-muted mb-0">
+                Goa Giri Putri merupakan salah satu lokasi wisata religi Nusa Penida yang banyak diminati pengunjung. 
+                Goa Giri Putri ini merupakan salah satu goa terbesar di Nusa Penida yang di dalamnya tersembunyi sebuah pura suci. 
+                Lokasinya berada pada ketinggian 150 meter di atas permukaan laut dan panjang sekitar 310 meter.
+              </p>
             </div>
           </div>
         </div>
-        @endforeach
-
+        <div class="col-lg-4 col-md-6">
+          <!-- Services Item-->
+          <div class="card border-0 shadow rounded-lg py-4 text-start">
+            <div class="card-body p-5">
+              <svg class="svg-icon svg-icon-light" style="width:60px;height:60px;color:#39f8d2">
+                <use xlink:href="#map-marker-1"> </use>
+              </svg>
+              <h3 class="h4 my-4">Track your move </h3>
+              <p class="text-sm text-muted mb-0">
+                Pura Goa Giri Putri berasal dari kata “giri” yang berarti bukit atau gunung serta kata “putri” yang berarti wanita. 
+                Dalam ajaran agama Hindu, putri adalah simbolis dari kekuatan dewa. Goa suci ini merupakan tempat pemujaan Dewa Siwa berupa perwujudan dewi yang bersifat merawat, 
+                melindungi serta mencintai manusia sehingga nama Giri Putri disematkan untuk nama goa.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <!-- Services Item-->
+          <div class="card border-0 shadow rounded-lg py-4 text-start">
+            <div class="card-body p-5">
+              <svg class="svg-icon svg-icon-light" style="width:60px;height:60px;color:#8190ff">
+                <use xlink:href="#arrow-target-1"> </use>
+              </svg>
+              <h3 class="h4 my-4">Market analysis</h3>
+              <p class="text-sm text-muted mb-0">
+                Hal unik yang dapat anda jumpai di Goa Giri Putri Temple yaitu akses masuknya yang tidak mudah. 
+                Pengunjung harus mendaki sekitar 110 anak tangga menuju ke mulut goa. Saat sudah sampai di mulut goa, 
+                pengunjung juga ditantang untuk berjuang masuk ke dalam goa karena mulut goa hanya memiliki lebar sekitar 80 
+                sentimeter dan berlekuk - lekuk. 
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -58,20 +94,62 @@
               <h2 class="mb-5">Tata Cara Persembahyangan</h2>
               <div class="swiper testimonials-slider">
                 <div class="swiper-wrapper">
-                  @foreach (json_decode($lokasi->deskripsi, true)['tahapan'] as $key => $tahapan)
                   <div class="swiper-slide h-auto">
                     <div class="mx-3 mx-lg-5 my-5 pt-3">
                       <div class="card shadow rounded-lg px-4 py-5 px-lg-5 with-pattern bg-white border-0">
                         <div class="card-body index-forward pt-5 rounded-lg">
                           {{-- <div class="testimonial-img"><img class="rounded-circle" src="https://d19m59y37dris4.cloudfront.net/app/2-0/img/avatar-1.a288a8c1.jpg" alt="" width="100"/></div> --}}
-                          <p class="lead text-muted mb-5">{{$tahapan['tahapan']}}</p>
-                          <h5 class="mb-0">{{$tahapan['bagian']}}</h5>
+                          <p class="lead text-muted mb-5">
+                            Tahapan persembahyangan di Goa Giri Putri dimulai dengan menaiki puluhan anak tangga 
+                            menuju tempat persembahyangan pertama yakni Pelinggih Ida Hyang Tri Purusa Lan Ganapati, 
+                            yang merupakan akses satu-satunya untuk memasuki Goa Giri Putri.
+                          </p>
+                          <h5 class="mb-0">Tahapan Pertama</h5>
                           {{-- <p class="text-primary mb-0 text-sm">Tech Developer</p> --}}
                         </div>
                       </div>
                     </div>
                   </div>
-                  @endforeach
+                  <div class="swiper-slide h-auto">
+                    <div class="mx-3 mx-lg-5 my-5 pt-3">
+                      <div class="card shadow rounded-lg px-4 py-5 px-lg-5 with-pattern bg-white border-0">
+                        <div class="card-body index-forward pt-5 rounded-lg">
+                          {{-- <div class="testimonial-img"><img class="rounded-circle" src="https://d19m59y37dris4.cloudfront.net/app/2-0/img/avatar-2.0af75238.png" alt="" width="100"/></div> --}}
+                          <p class="lead text-muted mb-5">Persembahyangan kedua dilaksanakan untuk menghaturkan sembah bhakti di Pelinggih Ida Hyang Wisnu dan Wasuki, serta terdapat pula lingga yoni yang melambangkan stana Dewa Siwa yang letaknya tidak jauh dari pelinggih utama.
+                            </p>
+                          <h5 class="mb-0">Tahapan Kedua</h5>
+                          {{-- <p class="text-primary mb-0 text-sm">Tech Developer</p> --}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide h-auto">
+                    <div class="mx-3 mx-lg-5 my-5 pt-3">
+                      <div class="card shadow rounded-lg px-4 py-5 px-lg-5 with-pattern bg-white border-0">
+                        <div class="card-body index-forward pt-5 rounded-lg">
+                          {{-- <div class="testimonial-img"><img class="rounded-circle" src="https://d19m59y37dris4.cloudfront.net/app/2-0/img/avatar-1.a288a8c1.jpg" alt="" width="100"/></div> --}}
+                          <p class="lead text-muted mb-5">Setelah itu dilanjutkan melakukan prosesi ketiga, keempat, dan kelima yang letaknya tidak jauh dari tempat persembahyangan kedua.
+                            </p>
+                          <h5 class="mb-0">Tahapan Ketiga</h5>
+                          {{-- <p class="text-primary mb-0 text-sm">Tech Developer</p> --}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide h-auto">
+                    <div class="mx-3 mx-lg-5 my-5 pt-3">
+                      <div class="card shadow rounded-lg px-4 py-5 px-lg-5 with-pattern bg-white border-0">
+                        <div class="card-body index-forward pt-5 rounded-lg">
+                          {{-- <div class="testimonial-img"><img class="rounded-circle" src="https://d19m59y37dris4.cloudfront.net/app/2-0/img/avatar-2.0af75238.png" alt="" width="100"/></div> --}}
+                          <p class="lead text-muted mb-5">
+                            Ketiga tempat tersebut merupakan Linggih Ida Hyang Dewi Gangga (tempat melukat), Ida Hyang Giri Pati, dan Ida Hyang Giri Putri. Pemedek diharuskan untuk melakukan penglukatan terlebih dahulu sebelum melakukan persembahyangan. Penglukatan tersebut dimaksudkan untuk memohon kepada Dewi Gangga agar secara lahir batin terlepas dari hal-hal negatif.
+                          </p>
+                          {{-- <h5 class="mb-0">Frank Smith</h5>
+                          <p class="text-primary mb-0 text-sm">Tech Developer</p> --}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
@@ -83,7 +161,7 @@
         <div class="col-lg-4">
           {{-- <h2>Tata Cara Persembahyangan</h2> --}}
           <p class="text-muted">Tata cara dalam melakukan persembahyangan pada pura goa giri putri dapat dilihat pada video berikut</p>
-          <button class="btn btn-primary js-modal-btn" data-video-id="{{json_decode($lokasi->deskripsi, true)['link_video']}}"><i class="fas fa-play-circle me-2"></i>Play video</button>
+          <button class="btn btn-primary js-modal-btn" data-video-id="lUr3q_ioquo"><i class="fas fa-play-circle me-2"></i>Play video</button>
         </div>
       </div>
       <div class="row align-items-center gy-5 py-5">
@@ -105,45 +183,62 @@
         </div>
         <div class="col-lg-6">
           <div class="row gy-4">
-
-            <div class="swiper testimonials-slider">
-              <div class="swiper-wrapper">
-
-                @forelse (json_decode($lokasi->galeri_foto, true) as $item)
-                <div class="swiper-slide h-auto">
-                  <div class="mx-3 mx-lg-5 my-5 pt-3">
-                    <div class="card shadow rounded-lg px-4 py-5 px-lg-5 with-pattern bg-white border-0">
-                      <div class="card-body index-forward pt-5 rounded-lg">
-                        <img class="img-fluid" src="{{asset($item['foto'])}}" alt="">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                @empty
-                  <div class="alert">
-                    <span class="alert alert-danger"><h2><strong>Tidak ada foto</strong></h2></span>
-                  </div>
-                @endforelse
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-
-            {{-- @forelse (json_decode($lokasi->galeri_foto, true) as $item)
             <div class="col-lg-6 col-sm-6">
+              <!-- Services Item-->
               <div class="card border-0 shadow rounded-lg text-start px-2">
                 <div class="card-body">
+                  {{-- <svg class="svg-icon" style="width:40px;height:40px;color:#ff904e">
+                    <use xlink:href="#document-saved-1"> </use>
+                  </svg> --}}
+                  <h3 class="h5 my-3">Online Marketing</h3>
                   <p class="text-sm mb-0 text-muted">
-                    <img class="img-fluid" src="{{asset($item['foto'])}}" alt="">
+                    <img class="img-fluid" src="https://www.befreetour.com/laravel-filemanager/photos/Artikel%20Review/Bali/Goa%20Giri%20Putri/Pengunjung_tak_hanya_berwisata_tetapi_juga_datang_untuk_bersembahyang_-_Photo_by__orianna_bali_tours.jpg" alt="">
                   </p>
                 </div>
               </div>
             </div>
-            @empty
-              <div class="alert">
-                <span class="alert alert-danger"><h2><strong>Tidak ada foto</strong></h2></span>
+            <div class="col-lg-6 col-sm-6">
+              <!-- Services Item-->
+              <div class="card border-0 shadow rounded-lg text-start px-2">
+                <div class="card-body">
+                  {{-- <svg class="svg-icon" style="width:40px;height:40px;color:#39f8d2">
+                    <use xlink:href="#map-marker-1"> </use>
+                  </svg> --}}
+                  <h3 class="h5 my-3">Track your move </h3>
+                  <p class="text-sm mb-0 text-muted">
+                    <img class="img-fluid" src="https://www.befreetour.com/laravel-filemanager/photos/Artikel%20Review/Bali/Goa%20Giri%20Putri/Kursi_-_kursi_panjang_dari_batu_yang_digunakan_untuk_persembahyangan_-_Photo_by__seviavera.jpg" alt="">
+                  </p>
+                </div>
               </div>
-            @endforelse --}}
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <!-- Services Item-->
+              <div class="card border-0 shadow rounded-lg text-start px-2">
+                <div class="card-body">
+                  {{-- <svg class="svg-icon" style="width:40px;height:40px;color:#8190ff">
+                    <use xlink:href="#arrow-target-1"> </use>
+                  </svg> --}}
+                  <h3 class="h5 my-3">Market analysis</h3>
+                  <p class="text-sm mb-0 text-muted">
+                    <img class="img-fluid" src="https://www.befreetour.com/laravel-filemanager/photos/Artikel%20Review/Bali/Goa%20Giri%20Putri/Kursi_-_kursi_panjang_dari_batu_yang_digunakan_untuk_persembahyangan_-_Photo_by__seviavera.jpg" alt="">
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <!-- Services Item-->
+              <div class="card border-0 shadow rounded-lg text-start px-2">
+                <div class="card-body">
+                  {{-- <svg class="svg-icon" style="width:40px;height:40px;color:#ff634b">
+                    <use xlink:href="#sorting-1"> </use>
+                  </svg> --}}
+                  <h3 class="h5 my-3">Full Settings</h3>
+                  <p class="text-sm mb-0 text-muted">
+                    <img class="img-fluid" src="https://www.befreetour.com/laravel-filemanager/photos/Artikel%20Review/Bali/Goa%20Giri%20Putri/Kursi_-_kursi_panjang_dari_batu_yang_digunakan_untuk_persembahyangan_-_Photo_by__seviavera.jpg" alt="">
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

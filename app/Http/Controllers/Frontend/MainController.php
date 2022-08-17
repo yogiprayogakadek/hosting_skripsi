@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UlasanRequest;
+use App\Models\Kategori;
 use App\Models\Lokasi;
 use App\Models\Ulasan;
 use Illuminate\Http\Request;
@@ -12,7 +13,9 @@ class MainController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $kategori = Kategori::where('nama', 'Pura')->first();
+        $lokasi = Lokasi::where('id_kategori', $kategori->id_kategori)->first();
+        return view('frontend.index', compact('lokasi'));
     }
 
     public function ulasan(UlasanRequest $request)

@@ -41,6 +41,17 @@ Route::prefix('/admin')->namespace('Main')->middleware('auth')->group(function()
         Route::get('/', 'DashboardController@index')->name('index');
     });
 
+    Route::prefix('/pura')->name('pura.')->group(function(){
+        Route::get('/', 'PuraController@index')->name('index');
+        Route::get('/create', 'PuraController@create')->name('create');
+        Route::get('/render', 'PuraController@render')->name('render');
+        Route::get('/edit/{id}', 'PuraController@edit')->name('edit');
+
+        Route::post('/store', 'PuraController@store')->name('store');
+        Route::post('/update', 'PuraController@update')->name('update');
+        Route::get('/delete/{id}', 'PuraController@delete')->name('delete');
+    });
+
     Route::prefix('/kebudayaan')->name('kebudayaan.')->group(function(){
         Route::get('/', 'KebudayaanController@index')->name('index');
         Route::get('/create', 'KebudayaanController@create')->name('create');

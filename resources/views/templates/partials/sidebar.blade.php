@@ -24,6 +24,10 @@
                         href="{{route('dashboard.index')}}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Dashboard</span>
                     </a>
+                    <a class="side-menu__item has-link {{Request::is('admin/pura') ? 'active' : '' }}" data-bs-toggle="slide"
+                        href="{{route('pura.index')}}"><i class="side-menu__icon fe fe-home"></i><span
+                            class="side-menu__label">Pura Goa Giri</span>
+                    </a>
                     <a class="side-menu__item has-link {{Request::is('admin/kebudayaan') ? 'active' : '' }}" data-bs-toggle="slide"
                         href="{{route('kebudayaan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Kebudayaan</span>
