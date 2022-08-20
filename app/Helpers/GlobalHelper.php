@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Kategori;
+use App\Models\Lokasi;
 use App\Models\Maintenance;
 use App\Models\MaintenanceHistori;
 use App\Models\Pengadaan;
@@ -86,7 +88,7 @@ function subtractingDate($date1, $date2)
 function menu()
 {
     $menu = [
-        'Barang', 'Pengadaan', 'Perbaikan', 'Kerusakan'
+        'Penginapan', 'Kebudayaan', 'Kesehatan'
     ];
 
     return $menu;
@@ -95,10 +97,9 @@ function menu()
 function RouteURL()
 {
     $url = [
-        0 => 'barang.index', 
-        1 => 'pengadaan.index', 
-        2 => 'perbaikan.index', 
-        3 => 'kerusakan.index'
+        0 => 'penginapan.index', 
+        1 => 'kebudayaan.index', 
+        2 => 'kesehatan.index', 
     ];
 
     return $url;
@@ -106,35 +107,7 @@ function RouteURL()
 
 function totalData($model)
 {
-    $a = 'App\Models\\' . $model;
-    if($model == 'Perbaikan'){
-        $total = Maintenance::where('kategori_maintenance', 'Perawatan dan Perbaikan')->count();
-    }
-    elseif($model == 'Kerusakan'){
-        $total = Maintenance::where('kategori_maintenance', 'Kerusakan')->count();
-    }
-    else{
-        $total = $a::count();
-    }
-    return $total;
+    $kategori = Kategori::where('nama', $model)->first();
+    return Lokasi::where('id_kategori', $kategori->id_kategori)->count();
 }
 
-function bulan()
-{
-    $bulan = [
-        'Januari',
-        'Februari',
-        'Maret',
-        'April',
-        'Mei',
-        'Juni',
-        'Juli',
-        'Agustus',
-        'September',
-        'Oktober',
-        'November',
-        'Desember',
-    ];
-
-    return $bulan;
-}

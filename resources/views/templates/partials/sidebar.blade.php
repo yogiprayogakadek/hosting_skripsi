@@ -25,19 +25,19 @@
                             class="side-menu__label">Dashboard</span>
                     </a>
                     <a class="side-menu__item has-link {{Request::is('admin/pura') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('pura.index')}}"><i class="side-menu__icon fe fe-home"></i><span
+                        href="{{route('pura.index')}}"><i class="side-menu__icon fe fe-globe"></i><span
                             class="side-menu__label">Pura Goa Giri</span>
                     </a>
                     <a class="side-menu__item has-link {{Request::is('admin/kebudayaan') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('kebudayaan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
+                        href="{{route('kebudayaan.index')}}"><i class="side-menu__icon fe fe-target"></i><span
                             class="side-menu__label">Kebudayaan</span>
                     </a>
                     <a class="side-menu__item has-link {{Request::is('admin/penginapan') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('penginapan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
+                        href="{{route('penginapan.index')}}"><i class="side-menu__icon fe fe-umbrella"></i><span
                             class="side-menu__label">Penginapan</span>
                     </a>
                     <a class="side-menu__item has-link {{Request::is('admin/kesehatan') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('kesehatan.index')}}"><i class="side-menu__icon fe fe-home"></i><span
+                        href="{{route('kesehatan.index')}}"><i class="side-menu__icon fe fe-stop-circle"></i><span
                             class="side-menu__label">Kesehatan</span>
                     </a>
                 </li>

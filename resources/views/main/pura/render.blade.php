@@ -2,9 +2,11 @@
     <div class="card-header">
         <div class="card-title">Data Pura Goa Giri Putri</div>
         <div class="card-options">
+            @if (count($lokasi) == 0)
             <button class="btn btn-primary btn-add" style="margin-left: 2px">
                 <i class="fa fa-plus"></i> Tambah
             </button>
+            @endif
         </div>
     </div>
     <div class="card-body">

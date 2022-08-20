@@ -112,4 +112,97 @@ class PuraController extends Controller
             ]);
         }
     }
+
+    public function edit($id)
+    {
+        $lokasi = Lokasi::find($id);
+        $view = [
+            'data' => view('main.pura.edit', compact('lokasi'))->render(),
+        ];
+
+        return response()->json($view);
+    }
+
+    public function update(Request $request)
+    {
+        try {
+            $kategori = Kategori::where('nama', 'Pura')->first();
+            $lokasi = Lokasi::find($request->id_lokasi);
+            $data = [
+                'nama' => $request->nama,
+                'alamat' => $request->alamat,
+                'latitude' => $request->latitude,
+                'longitude' => $request->longitude,
+                'id_kategori' => $kategori->id_kategori,
+            ];
+
+            $deskripsi_pura = json_decode($lokasi->deskripsi, true);
+
+            $deskripsi_pura = [
+                'link_video' => $request->link ?? '',
+            ];
+
+            $tentang = [] ;
+            for($i = 0; $i < count($request->deskripsi); $i++) {
+                $tentang[] = [
+                    'id' => $i+1,
+                    'tentang' => $request->tentang[$i] ?? '',
+                    'deskripsi' => $request->deskripsi[$i]
+                ];
+            }
+            
+            $tahapan = [];
+            for($j = 0; $j < count($request->tahapan); $j++) {
+                $tahapan[] = [
+                    'id' => $j+1,
+                    'bagian' => $request->bagian[$j] ?? '',
+                    'tahapan' => $request->tahapan[$j]
+                ];
+            }
+
+            $deskripsi_pura['tentang'] = $tentang;
+            $deskripsi_pura['tahapan'] = $tahapan;
+            
+
+            if ($request->hasFile('foto')) {
+                //get filename with extension
+                $filenamewithextension = $request->file('foto')->getClientOriginalName();
+
+                //get file extension
+                $extension = $request->file('foto')->getClientOriginalExtension();
+
+                //filename to store
+                $filenametostore = str_replace(' ', '-', $request->nama) . '-' . time() . '.' . $extension;
+                $save_path = 'assets/uploads/media/' . strtolower($kategori->nama);
+
+                if (!file_exists($save_path)) {
+                    mkdir($save_path, 666, true);
+                }
+                
+                $data['foto'] = $save_path . '/' . $filenametostore;
+
+                $img = Image::make($request->file('foto')->getRealPath());
+                $img->resize(600, 600);
+                $img->save($save_path . '/' . $filenametostore);
+            } else {
+                $data['foto'] = $lokasi->foto;
+            }
+
+            $data['deskripsi'] = json_encode($deskripsi_pura);
+
+            $lokasi->update($data);
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Data berhasil tersimpan',
+                'title' => 'Berhasil'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+                'title' => 'Gagal'
+            ]);
+        }
+    }
 }

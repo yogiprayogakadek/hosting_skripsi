@@ -22,7 +22,7 @@
             opacity: 0 !important
         }
     </style>
-    <title>SPK WP | Register</title> <!-- BOOTSTRAP CSS -->
+    <title>Pura Goa Giri Putri | Register</title> <!-- BOOTSTRAP CSS -->
     <script async="" src="https://s.pinimg.com/ct/lib/main.c99cd143.js"></script>
     <script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script>
     <script type="text/javascript" async="" src="https://s.pinimg.com/ct/core.js"></script>

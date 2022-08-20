@@ -46,6 +46,7 @@
       </div>
     </div>
   </section>
+  @auth
   <section class="with-pattern-1 py-5" id="services">
     <div class="container py-5">
       <div class="row align-items-center mb-5 gy-5">
@@ -78,7 +79,6 @@
             </div>
           </section>
         </div>
-
 
         <div class="col-lg-4">
           {{-- <h2>Tata Cara Persembahyangan</h2> --}}
@@ -149,6 +149,7 @@
       </div>
     </div>
   </section>
+  @endauth
 </section>
 
 
