@@ -9,17 +9,17 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Frontend')->name('frontend.')->group(function () {
     Route::get('/', 'MainController@index')->name('index');
     
-    Route::prefix('/penginapan')->name('penginapan.')->group(function() {
+    Route::prefix('/penginapan')->name('penginapan.')->middleware('auth')->group(function() {
         Route::get('/', 'PenginapanController@index')->name('index');
         Route::get('/{slug}', 'PenginapanController@show')->name('show');
     });
 
-    Route::prefix('/kebudayaan')->name('kebudayaan.')->group(function() {
+    Route::prefix('/kebudayaan')->name('kebudayaan.')->middleware('auth')->group(function() {
         Route::get('/', 'KebudayaanController@index')->name('index');
         Route::get('/{slug}', 'KebudayaanController@show')->name('show');
     });
 
-    Route::prefix('/kesehatan')->name('kesehatan.')->group(function() {
+    Route::prefix('/kesehatan')->name('kesehatan.')->middleware('auth')->group(function() {
         Route::get('/', 'KesehatanController@index')->name('index');
         Route::get('/{slug}', 'KesehatanController@show')->name('show');
     });

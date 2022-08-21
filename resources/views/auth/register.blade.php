@@ -120,6 +120,7 @@
                                         <input class="form-control" placeholder="Foto" type="file" name="foto"
                                             id="foto">
                                     </div>
+                                    <p class="text-muted text-small">foto pengguna</p>
                                 </div>
                                 <div class="text-center"><button type="submit" class="btn btn-primary my-4">Sign
                                         up</button></div>

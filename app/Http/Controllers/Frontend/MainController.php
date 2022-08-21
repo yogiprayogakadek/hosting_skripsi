@@ -23,6 +23,7 @@ class MainController extends Controller
         if($request->ajax()){
             try {
                 $nama = str_replace('-', ' ', $request->nama);
+                // dd($nama);
                 $lokasi = Lokasi::where('nama', $nama)->first();
                 $ulasan = $request->feedback;
 

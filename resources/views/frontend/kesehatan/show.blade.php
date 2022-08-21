@@ -96,9 +96,9 @@
         {{-- <h2 class="mb-5">What Our Users Says?</h2> --}}
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                @forelse ($ulasan as $ulasan)
                 <div class="swiper testimonials-slider">
                     <div class="swiper-wrapper">
+                        @forelse ($ulasan as $ulasan)
                         <div class="swiper-slide h-auto">
                             <div class="mx-3 mx-lg-5 my-5 pt-3">
                                 <div class="card shadow rounded-lg px-4 py-5 px-lg-5 with-pattern bg-white border-0">
@@ -113,14 +113,14 @@
                                 </div>
                             </div>
                         </div>
+                        @empty
+                        <div class="alert alert-warning">
+                            <p>Tidak ada testimonial</p>
+                        </div>
+                        @endforelse
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-                @empty
-                <div class="alert alert-warning">
-                    <p>Tidak ada testimonial</p>
-                </div>
-                @endforelse
             </div>
         </div>
     </div>
@@ -248,7 +248,7 @@
                 });
             }
 
-            let url = window.location.href.split('penginapan/');
+            let url = window.location.href.split('kebudayaan/');
             $('body').on('click', '.btn-feedback', function (e) {
                 $.ajaxSetup({
                     headers: {

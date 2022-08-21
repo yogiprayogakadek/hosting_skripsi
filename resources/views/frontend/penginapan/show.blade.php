@@ -98,9 +98,9 @@
         {{-- <h2 class="mb-5">What Our Users Says?</h2> --}}
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                @forelse ($ulasan as $ulasan)
                 <div class="swiper testimonials-slider">
                     <div class="swiper-wrapper">
+                        @forelse ($ulasan as $ulasan)
                         <div class="swiper-slide h-auto">
                             <div class="mx-3 mx-lg-5 my-5 pt-3">
                                 <div class="card shadow rounded-lg px-4 py-5 px-lg-5 with-pattern bg-white border-0">
@@ -115,14 +115,14 @@
                                 </div>
                             </div>
                         </div>
+                        @empty
+                        <div class="alert alert-warning">
+                            <p>Tidak ada testimonial</p>
+                        </div>
+                        @endforelse
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-                @empty
-                <div class="alert alert-warning">
-                    <p>Tidak ada testimonial</p>
-                </div>
-                @endforelse
             </div>
         </div>
     </div>
@@ -147,7 +147,6 @@
     @if ($userHasFeedback == 0)
     <div class="container text-center py-5">
         <p class="h6 text-uppercase text-primary">Ulasan {{$lokasi->nama}}</p>
-        {{-- <h2 class="mb-5">What Our Users Says?</h2> --}}
         <div class="row">
             {{-- Gall --}}
             <div class="col-lg-6 mx-auto">
@@ -157,18 +156,10 @@
                         <div class="invalid-feedback error-feedback"></div>
                     </div>
                     <div class="form-group mt-2">
-
                         <a href="javascript:void(0)"
                                     class="btn btn-primary btn-round btn-wd float-right btn-feedback">Kirim
                                     Ulasan</a>
                     </div>
-                    {{-- <div class="form-group">
-                        @for ($i = 1; $i < 6; $i++)
-                            <i class="fa fa-star fa-rating fa-2x" style="color: wheat;" id="rating-{{$i}}" data-rating="{{$i}}"></i>
-                        @endfor
-                        <input type="hidden" name="rating" id="rating" value="0">
-                        <div class="invalid-feedback error-rating"></div>
-                    </div> --}}
                 </form>
             </div>
         </div>
