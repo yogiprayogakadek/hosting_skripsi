@@ -66,7 +66,7 @@
             <p class="h6 text-uppercase text-primary">Fasilitas Penginapan</p>
             {{-- <h2 class="mb-5">Tentang Pura Goa Giri Putri</h2> --}}
             <div class="row pb-5 gy-4">
-                @foreach ($lokasi as $penginapan)
+                @forelse ($lokasi as $penginapan)
                 <div class="col-lg-4 col-md-6 link" style="cursor: pointer" data-source="{{route('frontend.penginapan.show', str_replace(' ', '-', $penginapan->nama))}}">
                     <!-- Services Item-->
                     <div class="card border-0 shadow rounded-lg py-4 text-start">
@@ -79,7 +79,11 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @empty
+                <div class="col-lg-4 col-md-6 link">
+                    <h3>Tidak ada data</h3>
+                </div>
+                @endforelse
             </div>
         </div>
     </section>

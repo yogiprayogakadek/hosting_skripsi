@@ -46,7 +46,21 @@
         </div>
       </div>
     </section>
-    @auth
+
+    {{-- video --}}
+    <div style="width: 560px; height: 315px; float: none; clear: both; margin: 2px auto;">
+      <embed
+        src="https://www.youtube.com/embed/J---aiyznGQ?autohide=1&autoplay=1"
+        wmode="transparent"
+        type="video/mp4"
+        width="100%" height="100%"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen
+        title="Keyboard Cat"
+      >
+    </div>
+
+    {{-- @auth --}}
     <section class="with-pattern-1 py-5" id="services">
       <div class="container py-5">
         <div class="row align-items-center mb-5 gy-5">
@@ -150,7 +164,7 @@
         </div>
       </div>
     </section>
-    @endauth
+    {{-- @endauth --}}
   </section>
 @else
 <section class="hero bg-top py-5" id="hero" style="background: url(https://d19m59y37dris4.cloudfront.net/app/2-0/img/banner-4.86a86274.png) no-repeat; background-size: 100% 80%">
