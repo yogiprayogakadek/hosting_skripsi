@@ -174,8 +174,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script
-    src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAPS_KEY')}}&callback=initMap&libraries=&v=weekly"
-    async></script>
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi4v5LQyLVl2YUfm3Xn3Kb746RO3L8BjA&callback=initMap&libraries=&v=weekly"
+ async></script>
     <script>
         $(document).ready(function () {
             $('.link').click(function(){
@@ -193,10 +193,12 @@
             function initMap(position) {
                 let desLat = {{$lokasi->latitude}};
                 let desLong = {{$lokasi->longitude}};
-                let button = '<a href="https://www.google.com/maps/dir/?api=1&origin='+position.coords.latitude+','+position.coords.longitude+'&destination='+desLat+','+desLong+'" target="_blank"><button type=button class="mt-3 btn btn-primary">Lihat Dari Google Maps</button></a>';
+                let button = '<a href="https://www.google.com/maps/dir/?api=1&origin=-8.708787114114974,115.58610396836214&destination='+desLat+','+desLong+'" target="_blank"><button type=button class="mt-3 btn btn-primary">Lihat Dari Google Maps</button></a>';
+                // let button = '<a href="https://www.google.com/maps/dir/?api=1&origin='+position.coords.latitude+','+position.coords.longitude+'&destination='+desLat+','+desLong+'" target="_blank"><button type=button class="mt-3 btn btn-primary">Lihat Dari Google Maps</button></a>';
                 $('.getDirection').html(button)
 
-                var pointA = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                var pointA = new google.maps.LatLng(-8.708787114114974, 115.58610396836214),
+                // var pointA = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                 // pointB = new google.maps.LatLng(-8.42027127774227, 115.35910193862952),
                 pointB = new google.maps.LatLng(desLat, desLong),
                 myOptions = {

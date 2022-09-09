@@ -50,6 +50,8 @@ class PuraController extends Controller
 
             $deskripsi_pura = [
                 'link_video' => $request->link ?? '',
+                'video_profil' => $request->video_profil ?? '',
+                'link_referensi' => $request->link_referensi ?? ''
             ];
 
             $tentang = [] ;
@@ -140,6 +142,8 @@ class PuraController extends Controller
 
             $deskripsi_pura = [
                 'link_video' => $request->link ?? '',
+                'video_profil' => $request->video_profil ?? '',
+                'link_referensi' => $request->link_referensi ?? ''
             ];
 
             $tentang = [] ;

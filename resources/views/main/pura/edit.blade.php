@@ -33,6 +33,11 @@
                     <div class="invalid-feedback error-longitude"></div>
                 </div>
                 <div class="form-group">
+                    <label for="link-referensi">Link Referensi</label>
+                    <input type="text" class="form-control link_referensi" name="link_referensi" id="link-referensi" placeholder="masukkan link referensi" value="{{json_decode($lokasi->deskripsi, true)['link_referensi']}}">
+                    <div class="invalid-feedback error-link_referensi"></div>
+                </div>
+                <div class="form-group">
                     <label for="foto">Foto</label>
                     <input type="file" class="form-control foto" name="foto" id="foto" placeholder="masukkan foto">
                     <span class="text-muted text-small">*kosongkan apabila tidak ingin mengubah foto</span>
@@ -86,6 +91,11 @@
             </div>
 
             <div class="card-body">
+                <div class="form-group">
+                    <label for="video-profil">Link Video Profil</label>
+                    <input type="text" class="form-control video_profil" name="video_profil" id="video-profil" placeholder="masukkan link video profil" value="{{json_decode($lokasi->deskripsi, true)['video_profil']}}">
+                    <div class="invalid-feedback error-video_profil"></div>
+                </div>
                 <div class="form-group">
                     <label for="link">ID Tautan Video</label>
                     <input type="text" class="form-control link" name="link" id="link" placeholder="masukkan link" value="{{json_decode($lokasi->deskripsi, true)['link_video']}}">
