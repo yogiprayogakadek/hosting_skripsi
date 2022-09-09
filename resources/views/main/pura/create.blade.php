@@ -106,8 +106,16 @@
                             <div class="invalid-feedback error-bagian0"></div>
                         </div>
                     </div>
+                    
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label for="tata-foto">Foto</label>
+                            <input type="file" class="form-control tata_foto0" name="tata_foto[0]" id="tata-foto0" placeholder="masukkan foto tata cara">
+                            <div class="invalid-feedback error-tata_foto0"></div>
+                        </div>
+                    </div>
 
-                    <div class="col-9">
+                    <div class="col-6">
                         <div class="form-group">
                             <label for="tahapan">Deskripsi Tahapan</label>
                             <textarea class="form-control tahapan0" name="tahapan[0]" id="tahapan0" placeholder="masukkan tahapan"></textarea>

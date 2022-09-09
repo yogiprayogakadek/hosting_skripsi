@@ -82,7 +82,13 @@ $(document).ready(function () {
                             '<div class="invalid-feedback error-bagian'+j+'"></div>' +
                         '</div>' +
                     '</div>' +
-                    '<div class="col-8 persembahyangan-group'+j+'">' +
+                    '<div class="col-3 persembahyangan-group'+j+'">' +
+                        '<div class="form-group">' +
+                            '<input type="file" class="form-control tata_foto'+j+'" name="tata_foto['+j+']" id="tata-foto'+j+'" placeholder="masukkan foto tata cara">' +
+                            '<div class="invalid-feedback error-tata_foto'+j+'"></div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="col-5 persembahyangan-group'+j+'">' +
                         '<div class="form-group">' +
                             '<textarea class="form-control tahapan'+j+'" name="tahapan['+j+']" id="tahapan'+j+'" placeholder="masukkan tahapan"></textarea>' +
                             '<div class="invalid-feedback error-tahapan'+j+'"></div>' +
@@ -169,6 +175,8 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 $(".render").html(response.data);
+                i = $('.tentang').length - 1;
+                j = $('.tahapan').length - 1;
             },
             error: function (error) {
                 console.log("Error", error);

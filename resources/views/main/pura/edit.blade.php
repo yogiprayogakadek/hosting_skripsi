@@ -62,7 +62,7 @@
                     <div class="col-3">
                         <div class="form-group">
                             <label for="tentang">Tentang</label>
-                            <input type="text" class="form-control tentang{{$i}}" name="tentang[{{$i}}]" id="tentang{{$i}}" placeholder="masukkan tentang" value="{{json_decode($lokasi->deskripsi, true)['tentang'][$i]['tentang']}}">
+                            <input type="text" class="form-control tentang tentang{{$i}}" name="tentang[{{$i}}]" id="tentang{{$i}}" placeholder="masukkan tentang" value="{{json_decode($lokasi->deskripsi, true)['tentang'][$i]['tentang']}}">
                             <div class="invalid-feedback error-tentang{{$i}}"></div>
                         </div>
                     </div>
@@ -106,12 +106,21 @@
                     <div class="col-3">
                         <div class="form-group">
                             <label for="bagian">Bagian</label>
-                            <input type="text" class="form-control bagian{{$j}}" name="bagian[{{$j}}]" id="bagian{{$j}}" placeholder="masukkan bagian" value="{{json_decode($lokasi->deskripsi, true)['tahapan'][$j]['bagian']}}">
+                            <input type="text" class="form-control tahapan bagian{{$j}}" name="bagian[{{$j}}]" id="bagian{{$j}}" placeholder="masukkan bagian" value="{{json_decode($lokasi->deskripsi, true)['tahapan'][$j]['bagian']}}">
                             <div class="invalid-feedback error-bagian{{$j}}"></div>
                         </div>
                     </div>
 
-                    <div class="col-9">
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label for="tata-foto">Foto</label>
+                            <input type="file" class="form-control tata_foto{{$j}}" name="tata_foto[{{$j}}]" value="{{json_decode($lokasi->deskripsi, true)['tahapan'][$j]['foto']}}" id="tata-foto{{$j}}" placeholder="masukkan foto tata cara">
+                            <span class="text-small text-muted">*kosongkan jika tidak ingin mengganti foto</span>
+                            <div class="invalid-feedback error-tata_foto{{$j}}"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
                         <div class="form-group">
                             <label for="tahapan">Deskripsi Tahapan</label>
                             <textarea class="form-control tahapan{{$j}}" name="tahapan[{{$j}}]" id="tahapan{{$j}}" placeholder="masukkan tahapan">{{json_decode($lokasi->deskripsi, true)['tahapan'][$j]['tahapan']}}</textarea>
