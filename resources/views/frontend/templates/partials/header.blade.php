@@ -14,6 +14,7 @@
             </li>
             @endcan
             @endauth
+            
             <li class="nav-item">
               <a class="nav-link link-scroll {{Request::is('penginapan') ? 'active' : '' }}" href="{{route('frontend.penginapan.index')}}">Penginapan</a>
             </li>
