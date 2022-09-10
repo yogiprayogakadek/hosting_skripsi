@@ -15,6 +15,7 @@ class MainController extends Controller
     {
         $kategori = Kategori::where('nama', 'Pura')->first();
         $lokasi = Lokasi::where('id_kategori', $kategori->id_kategori)->first();
+        // dd(json_decode($lokasi->deskripsi, true));
         return view('frontend.index', compact('lokasi'));
     }
 

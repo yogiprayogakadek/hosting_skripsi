@@ -38,10 +38,10 @@
 <section class="p-0" id="testimonials"
     style="background: url(https://d19m59y37dris4.cloudfront.net/app/2-0/img/testimonials-bg.cc4a8da7.png) no-repeat; background-size: 40% 100%; background-position: left center">
     <div class="container text-center">
-        <p class="h6 text-uppercase text-primary">Tentang {{$lokasi->nama}}</p>
+        <p class="h6 text-uppercase text-primary text-center">Tentang {{$lokasi->nama}}</p>
         {{-- <h2 class="mb-5">What Our Users Says?</h2> --}}
         <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-8 mx-auto" style="text-align: justify">
                 <p>{!! $lokasi->deskripsi !!}</p>
             </div>
         </div>

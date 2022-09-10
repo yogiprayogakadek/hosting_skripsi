@@ -46,6 +46,7 @@
           </div>
           @endforeach
 
+<<<<<<< HEAD
         </div>
       </div>
     </section>
@@ -172,6 +173,8 @@
     </section>
     {{-- @endauth --}}
   </section>
+=======
+>>>>>>> 811e7cc00d676323efb8e457de24589b4edef485
 @else
 <section class="hero bg-top py-5" id="hero" style="background: url(https://d19m59y37dris4.cloudfront.net/app/2-0/img/banner-4.86a86274.png) no-repeat; background-size: 100% 80%">
   <div class="container py-5">
@@ -184,3 +187,17 @@
 </section>
 @endif
 @endsection
+
+@push('scripts')
+    <script>
+      const swiper = new Swiper('.swiper', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 2000,
+        },
+      });
+    </script>
+@endpush

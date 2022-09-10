@@ -124,9 +124,60 @@
 
 
 @endsection
+@section('footer')
+<footer class="with-pattern-1 position-relative pt-5">
+    <div class="container py-5">
+        <div class="row gy-4">
+    <div class="col-lg-12">
+        <h3 class="text-center">Peta Persebaran Lokasi Kebudayaan</h3>
+        <div id="map" style="height: 500px"></div>
+    </div>
+    </div>
+</div>
+</footer>
+@endsection
 
 @push('scripts')
-    <script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi4v5LQyLVl2YUfm3Xn3Kb746RO3L8BjA&callback=initMap&libraries=&v=weekly" async></script>
+<script>
+    var lat = [];
+    var long = [];
+    var nama = [];
+    var id_lokasi = [];
+
+    function pushData() {
+        @foreach ($lokasi as $item)
+            lat.push({{ $item->latitude }});
+            long.push({{ $item->longitude }});
+            nama.push('{{ $item->nama }}');
+            id_lokasi.push({{ $item->id_lokasi }});
+        @endforeach
+    }
+    pushData();
+
+    function initMap() {
+        const myLatLng = { lat: -8.708787114114974, lng: 115.58610396836214 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 10,
+            center: myLatLng,
+        });
+        var infowindow = new google.maps.InfoWindow();
+        var marker, i;
+        for (i = 0; i < long.length; i++) {  
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat[i], long[i]),
+                map: map
+            });
+            
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infowindow.setContent('<a href="{{url('/kebudayaan/')}}/'+nama[i]+'">'+nama[i]+'</a>');
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+    }
+    window.initMap = initMap;
         $(document).ready(function () {
             $('.link').click(function(){
                 var link = $(this).data('source');

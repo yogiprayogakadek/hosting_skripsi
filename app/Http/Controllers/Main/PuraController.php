@@ -65,10 +65,35 @@ class PuraController extends Controller
             
             $tahapan = [];
             for($j = 0; $j < count($request->tahapan); $j++) {
+                if($request->tata_foto[$j] == null) {
+                    $foto = '';
+                } else {
+                    //get filename with extension
+                    $filenamewithextension = $request->file('tata_foto')[$j]->getClientOriginalName();
+        
+                    //get file extension
+                    $extension = $request->file('tata_foto')[$j]->getClientOriginalExtension();
+    
+                    //filename to store
+                    $filenametostore = $request->nama . '-tahapan-' . ($j + 1) . '-' . time() . '.' . $extension;
+                    $save_path = 'assets/uploads/media/pura/tahapan';
+                    
+                    if (!file_exists($save_path)) {
+                        mkdir($save_path, 666, true);
+                    }
+
+                    $foto = $save_path . '/' . $filenametostore;
+
+                    $img = Image::make($request->file('tata_foto')[$j]->getRealPath());
+                    $img->resize(512, 512);
+                    $img->save($save_path . '/' . $filenametostore);
+                }
+
                 $tahapan[] = [
                     'id' => $j+1,
                     'bagian' => $request->bagian[$j] ?? '',
-                    'tahapan' => $request->tahapan[$j]
+                    'tahapan' => $request->tahapan[$j],
+                    'foto' => $foto
                 ];
             }
 
@@ -154,13 +179,37 @@ class PuraController extends Controller
                     'deskripsi' => $request->deskripsi[$i]
                 ];
             }
-            
             $tahapan = [];
             for($j = 0; $j < count($request->tahapan); $j++) {
+                if(!isset($request->tata_foto[$j])) {
+                    $foto = json_decode($lokasi->deskripsi, true)['tahapan'][$j]['foto'] ?? '';
+                } else {
+                    //get filename with extension
+                    $filenamewithextension = $request->file('tata_foto')[$j]->getClientOriginalName();
+        
+                    //get file extension
+                    $extension = $request->file('tata_foto')[$j]->getClientOriginalExtension();
+    
+                    //filename to store
+                    $filenametostore = $request->nama . '-tahapan-' . ($j + 1) . '-' . time() . '.' . $extension;
+                    $save_path = 'assets/uploads/media/pura/tahapan';
+                    
+                    if (!file_exists($save_path)) {
+                        mkdir($save_path, 666, true);
+                    }
+
+                    $foto = $save_path . '/' . $filenametostore;
+
+                    $img = Image::make($request->file('tata_foto')[$j]->getRealPath());
+                    $img->resize(512, 512);
+                    $img->save($save_path . '/' . $filenametostore);
+                }
+
                 $tahapan[] = [
                     'id' => $j+1,
                     'bagian' => $request->bagian[$j] ?? '',
-                    'tahapan' => $request->tahapan[$j]
+                    'tahapan' => $request->tahapan[$j],
+                    'foto' => $foto
                 ];
             }
 
